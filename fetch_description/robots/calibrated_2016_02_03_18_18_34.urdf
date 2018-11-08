@@ -106,7 +106,7 @@
     <parent link="base_link" />
     <child link="torso_lift_link" />
     <axis xyz="0 0 1" />
-    <limit effort="450.0" lower="0" upper="0.1" velocity="0.1" />
+    <limit effort="450.0" lower="0" upper="0.4" velocity="0.1" />
     <dynamics damping="100.0" />
   </joint>
   <link name="head_pan_link">
@@ -252,13 +252,13 @@
       </geometry>
     </collision>
   </link>
-  <joint name="upperarm_roll_joint" type="revolute">
+  <joint name="upperarm_roll_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.219 0 0" />
     <parent link="shoulder_lift_link" />
     <child link="upperarm_roll_link" />
     <axis xyz="1 0 0" />
     <dynamics damping="5.0" />
-    <limit effort="76.94" lower="-2.0" upper="2.0" velocity="1.571" />
+    <limit effort="76.94" velocity="1.571" />
     <calibration rising="-0.0377215" />
   </joint>
   <link name="elbow_flex_link">
@@ -314,13 +314,13 @@
       </geometry>
     </collision>
   </link>
-  <joint name="forearm_roll_joint" type="revolute">
+  <joint name="forearm_roll_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.197 0 0" />
     <parent link="elbow_flex_link" />
     <child link="forearm_roll_link" />
     <axis xyz="1 0 0" />
     <dynamics damping="5.0" />
-    <limit effort="29.35" lower="-2.0" upper="2.0" velocity="1.571" />
+    <limit effort="29.35" velocity="1.571" />
     <calibration rising="-0.0411323" />
   </joint>
   <link name="wrist_flex_link">
@@ -376,12 +376,12 @@
       </geometry>
     </collision>
   </link>
-  <joint name="wrist_roll_joint" type="revolute">
+  <joint name="wrist_roll_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.1385 0 0" />
     <parent link="wrist_flex_link" />
     <child link="wrist_roll_link" />
     <axis xyz="1 0 0" />
-    <limit effort="7.36" lower="-2.0" upper="2.0" velocity="2.268" />
+    <limit effort="7.36" velocity="2.268" />
     <dynamics damping="5.0" />
     <calibration rising="0.0265636" />
   </joint>
